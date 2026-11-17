@@ -1,0 +1,47 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+.menuelem {
+	display: block;
+	background: #3498db;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 12px;
+	text-decoration: none;
+	flex: 1;
+	text-align: center;
+}
+.menuelem:hover {
+	background: #2980b9;
+}
+
+#content {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+}
+.logout_form {
+    display: flex;
+	flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.logout_form button.menuelem {
+    font: inherit;
+    cursor: pointer;
+}
