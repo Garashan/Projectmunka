@@ -1,0 +1,18 @@
+Options -MultiViews
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# Létező fájlok és könyvtárak
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Termékek és alkategóriák
+RewriteRule ^termekek(?:/(.*))?/?$ index.php?q=termekek&path=$1 [QSA,L]
+
+# Egyéb oldalak
+RewriteRule ^([^/]+)/?$ index.php?q=$1 [QSA,L]
+
+# Nem létező útvonalak
+RewriteRule ^ - [R=404,L]
